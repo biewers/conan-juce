@@ -1,9 +1,10 @@
 from conans import ConanFile, CMake, tools
-import os
-
 
 class JuceConan(ConanFile):
     name = "juce"
+    url = "https://github.com/biewers/conan-juce"
+    description = "JUCE Conan Recipe"
+    license = "Apache-2.0"
     version = "5.3.2"
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False]}
@@ -12,7 +13,7 @@ class JuceConan(ConanFile):
     generators = "cmake"
 
     def source(self):
-        self.run("git clone https://github.com/WeAreROLI/JUCE")
+        self.run("git clone https://github.com/WeAreROLI/JUCE.git")
         self.run("cd JUCE && git checkout {0}".format(self.version))
 
     def build(self):
