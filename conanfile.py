@@ -9,7 +9,7 @@ class JuceConan(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False]}
     default_options = "shared=False"
-    exports_sources = ["CMakeLists.txt", "JuceLibraryCode/*"]
+    exports_sources = ["CMakeLists.txt", "*.cmake", "JuceLibraryCode/*"]
     generators = "cmake"
 
     def source(self):

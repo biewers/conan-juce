@@ -1,0 +1,53 @@
+option(DONT_SET_USING_JUCE_NAMESPACE "Don't set using JUCE namespace" ON)
+option(JUCE_DONT_DECLARE_PROJECTINFO "Don't declare project info" ON)
+option(JucePlugin_Build_VST "Juce Plugin Build VST" OFF)
+option(JucePlugin_Build_VST3 "Juce Plugin Build VST3" OFF)
+option(JucePlugin_Build_AU "Juce Plugin Build AU" OFF)
+option(JucePlugin_Build_AUv3 "Juce Plugin Build AUv3" OFF)
+option(JucePlugin_Build_RTAS "Juce Plugin Build RTAS" OFF)
+option(JucePlugin_Build_Standalone "Juce Plugin Build Standalone" OFF)
+
+if(DONT_SET_USING_JUCE_NAMESPACE)
+    cxx_define(CMAKE_CXX_FLAGS "DONT_SET_USING_JUCE_NAMESPACE")
+endif(DONT_SET_USING_JUCE_NAMESPACE)
+
+if(JUCE_DONT_DECLARE_PROJECTINFO)
+    cxx_define(CMAKE_CXX_FLAGS "JUCE_DONT_DECLARE_PROJECTINFO")
+endif(JUCE_DONT_DECLARE_PROJECTINFO)
+
+if(JucePlugin_Build_VST)
+    cxx_define(CMAKE_CXX_FLAGS "JucePlugin_Build_VST=1")
+else(JucePlugin_Build_VST)
+    cxx_define(CMAKE_CXX_FLAGS "JucePlugin_Build_VST=0")
+endif(JucePlugin_Build_VST)
+
+if(JucePlugin_Build_VST3)
+    cxx_define(CMAKE_CXX_FLAGS "JucePlugin_Build_VST3=1")
+else(JucePlugin_Build_VST3)
+    cxx_define(CMAKE_CXX_FLAGS "JucePlugin_Build_VST3=0")
+endif(JucePlugin_Build_VST3)
+
+if(JucePlugin_Build_AU)
+    cxx_define(CMAKE_CXX_FLAGS "JucePlugin_Build_AU=1")
+else(JucePlugin_Build_AU)
+    cxx_define(CMAKE_CXX_FLAGS "JucePlugin_Build_AU=0")
+endif(JucePlugin_Build_AU)
+
+if(JucePlugin_Build_AUv3)
+    cxx_define(CMAKE_CXX_FLAGS "JucePlugin_Build_AUv3=1")
+else(JucePlugin_Build_AUv3)
+    cxx_define(CMAKE_CXX_FLAGS "JucePlugin_Build_AUv3=0")
+endif(JucePlugin_Build_AUv3)
+
+if(JucePlugin_Build_RTAS)
+    cxx_define(CMAKE_CXX_FLAGS "JucePlugin_Build_RTAS=1")
+else(JucePlugin_Build_RTAS)
+    cxx_define(CMAKE_CXX_FLAGS "JucePlugin_Build_RTAS=0")
+endif(JucePlugin_Build_RTAS)
+
+if(JucePlugin_Build_Standalone)
+    cxx_define(CMAKE_CXX_FLAGS "JucePlugin_Build_Standalone=1")
+else(JucePlugin_Build_Standalone)
+    cxx_define(CMAKE_CXX_FLAGS "JucePlugin_Build_Standalone=0")
+endif(JucePlugin_Build_Standalone)
+
